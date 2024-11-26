@@ -10,7 +10,7 @@ Caso o usuário digite sair, para de solicitar dados.
 REFATORANDO CÓDIGO:
 Crie uma função para:
 
-- Ordenção
+- Ordenação
 - Ordenação inversa
 """
 
@@ -31,12 +31,23 @@ while True:
 # Processamento
 print("\nOrdenando lista...")
 lista_ordenada = sorted(lista_frutas)
+lista_inversa = sorted(lista_frutas, reverse=True)
 
 # Saída 
-print("=== Saída ===")
-print("Lista Original: ")
-print(lista_frutas)
+def lista_original():
+    print("=== Saída ===")
+    print("Lista Original: ")
+    print(lista_frutas)
 
-print("\nLista Ordenada: ")
-print(lista_ordenada)
+def lista_ordenada():
+    print("\nLista Ordenada: ")
+    print(lista_ordenada)
+
+def lista_inversa():
+    print("\nLista Inversa: ")
+    print(lista_inversa)    
+
+lista_original()
+lista_ordenada()
+lista_inversa()
 
