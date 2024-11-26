@@ -19,35 +19,50 @@ os.system("cls || clear")
 
 lista_frutas = []
 
-# Entrada
-print("=== Solicitando dados para o usuário ===")
-while True:
-    nome_frutas = input("Digite um nome de uma fruta: ")
-    if nome_frutas.lower() == "sair":
-        break
-    else:
-        lista_frutas.append(nome_frutas)
+# Saída 
+def lista_original(n1):
+    print("Lista Original: ")
+    print(n1)
+
+def lista_ordenadas(n1):
+    print("\nLista Ordenada: ")
+    print(sorted(n1))
+    
+def lista_inversas(n1):
+    print("\nLista Inversa: ")   
+    print(sorted(n1, reverse=True))
+
+def menu():
+    print("="*40)
+    print(f"{'Senai':^40}")
+    print("="*40)
+    print("""
+    1 - Lista Original      
+    2 - Lista Ordenada
+    3 - Lista Inversa
+    4 - Nenhuma das opções acima.
+          """)
 
 # Processamento
-print("\nOrdenando lista...")
-lista_ordenada = sorted(lista_frutas)
-lista_inversa = sorted(lista_frutas, reverse=True)
 
-# Saída 
-def lista_original():
-    print("=== Saída ===")
-    print("Lista Original: ")
-    print(lista_frutas)
+while True:
+    fruta = input("\nDigite uma fruta para adicionar à lista: ").strip()
+    lista_frutas.append(fruta)
+    os.system("cls || clear")
+    menu()
+    opcao = int(input("Digite qual a lista que vc deseja ver: "))
+    match opcao:
+        case 1:
+            lista_original(lista_frutas)
+        case 2:
+            lista_ordenadas(lista_frutas)
+        case 3:
+            lista_inversas(lista_frutas)
+        case 4:
+            print("Nenhuma das opções acima, ok!")
+            break
 
-def lista_ordenada():
-    print("\nLista Ordenada: ")
-    print(lista_ordenada)
+ 
+# Solicitar a entrada de frutas
 
-def lista_inversa():
-    print("\nLista Inversa: ")
-    print(lista_inversa)    
-
-lista_original()
-lista_ordenada()
-lista_inversa()
 
