@@ -49,7 +49,6 @@ while True:
     fruta = input("\nDigite uma fruta para adicionar à lista: ").strip()
     lista_frutas.append(fruta)
     os.system("cls || clear")
-    menu()
     opcao = int(input("Digite qual a lista que vc deseja ver: "))
     match opcao:
         case 1:
